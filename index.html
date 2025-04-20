@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meseros Profesionales | Servicio para Eventos en Cocoyoc y Todo Morelos</title>
+    <meta name="description" content="Meseros profesionales con años de experiencia para todo tipo de eventos. Calidad, elegancia y servicio excepcional en Cocoyoc y todo Morelos.">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #8B5A2B; /* Café elegante - transmite confianza y profesionalismo */
+            --secondary-color: #D4AF37; /* Dorado - lujo y calidad */
+            --accent-color: #A52A2A; /* Rojo terciopelo - urgencia y pasión */
+            --light-color: #F5F5F5; /* Fondo claro */
+            --dark-color: #333333; /* Texto oscuro */
+            --transition: all 0.3s ease;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: var(--dark-color);
+            background-color: var(--light-color);
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+        }
+        
+        .navbar {
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+        }
+        
+        .navbar.scrolled {
+            background-color: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .navbar-brand {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: var(--primary-color) !important;
+            font-size: 1.8rem;
+        }
+        
+        .nav-link {
+            color: var(--dark-color) !important;
+            font-weight: 500;
+            margin: 0 10px;
+            position: relative;
+        }
+        
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--secondary-color);
+            transition: var(--transition);
+        }
+        
+        .nav-link:hover:after {
+            width: 100%;
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            color: white;
+            position: relative;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .hero-title {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+        
+        .btn-primary-custom {
+            background-color: var(--secondary-color);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 1.1rem;
+            font-weight: 500;
+            border-radius: 50px;
+            transition: var(--transition);
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+        }
+        
+        .btn-primary-custom:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.6);
+            color: white;
+        }
+        
+        .btn-secondary-custom {
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+            padding: 10px 28px;
+            font-size: 1.1rem;
+            font-weight: 500;
+            border-radius: 50px;
+            transition: var(--transition);
+        }
+        
+        .btn-secondary-custom:hover {
+            background-color: white;
+            color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+        
+        .section-title {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 50px;
+            color: var(--primary-color);
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 3px;
+            background-color: var(--secondary-color);
+            bottom: -15px;
+            left: 25%;
+        }
+        
+        .service-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+            margin-bottom: 30px;
+            height: 100%;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .service-img {
+            height: 200px;
+            object-fit: cover;
+            width: 100%;
+        }
+        
+        .service-body {
+            padding: 25px;
+        }
+        
+        .service-title {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        .testimonial-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            position: relative;
+        }
+        
+        .testimonial-card:before {
+            content: '\201C';
+            font-family: Georgia, serif;
+            font-size: 60px;
+            color: var(--secondary-color);
+            position: absolute;
+            top: 10px;
+            left: 15px;
+            opacity: 0.3;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .testimonial-author {
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+        
+        .form-control-custom {
+            border-radius: 50px;
+            padding: 12px 20px;
+            border: 1px solid #ddd;
+            margin-bottom: 20px;
+        }
+        
+        .form-control-custom:focus {
+            border-color: var(--secondary-color);
+            box-shadow: 0 0 0 0.25rem rgba(212, 175, 55, 0.25);
+        }
+        
+        .contact-info {
+            margin-bottom: 30px;
+        }
+        
+        .contact-icon {
+            font-size: 2rem;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+        }
+        
+        .footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 50px 0 20px;
+        }
+        
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: var(--transition);
+            display: block;
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary-color);
+            padding-left: 5px;
+        }
+        
+        .social-icons a {
+            color: white;
+            font-size: 1.5rem;
+            margin-right: 15px;
+            transition: var(--transition);
+        }
+        
+        .social-icons a:hover {
+            color: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+        
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px #999;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+        
+        .whatsapp-float:hover {
+            background-color: #128C7E;
+            color: white;
+            transform: scale(1.1);
+        }
+        
+        .floating-label {
+            position: absolute;
+            pointer-events: none;
+            left: 20px;
+            top: 12px;
+            transition: 0.2s ease all;
+            color: #999;
+            background-color: white;
+            padding: 0 5px;
+        }
+        
+        .form-group {
+            position: relative;
+            margin-bottom: 25px;
+        }
+        
+        .form-control:focus ~ .floating-label,
+        .form-control:not(:placeholder-shown) ~ .floating-label {
+            top: -10px;
+            left: 15px;
+            font-size: 12px;
+            color: var(--secondary-color);
+        }
+        
+        .price-badge {
+            position: absolute;
+            top: -15px;
+            right: 20px;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-weight: 700;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .cta-section {
+            background: linear-gradient(rgba(139, 90, 43, 0.9), rgba(139, 90, 43, 0.9)), url('https://images.unsplash.com/photo-1555244162-803834f70033?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            padding: 100px 0;
+            color: white;
+            text-align: center;
+        }
+        
+        .cta-title {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .cta-text {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .benefit-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 30px;
+        }
+        
+        .benefit-icon {
+            font-size: 1.8rem;
+            color: var(--secondary-color);
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+        
+        .benefit-content h4 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        
+        .gallery-img {
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+        }
+        
+        .gallery-img:hover {
+            transform: scale(1.03);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .gallery-img img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .gallery-img:hover img {
+            transform: scale(1.1);
+        }
+        
+        @media (max-width: 992px) {
+            .hero-title {
+                font-size: 2.8rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.2rem;
+            }
+            
+            .navbar-brand {
+                font-size: 1.5rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .cta-title {
+                font-size: 2rem;
+            }
+            
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                bottom: 20px;
+                right: 20px;
+                font-size: 25px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero-title {
+                font-size: 1.8rem;
+            }
+            
+            .btn-primary-custom, .btn-secondary-custom {
+                padding: 10px 20px;
+                font-size: 1rem;
+                display: block;
+                width: 80%;
+                margin: 10px auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Meseros Profesionales</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#servicios">Servicios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#nosotros">Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#galeria">Galería</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#testimonios">Testimonios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contacto">Contacto</a>
+                    </li>
+                    <li class="nav-item ms-lg-3">
+                        <a class="btn btn-primary-custom d-none d-lg-inline-block" href="#contacto">Cotizar Ahora</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-content" data-aos="fade-up">
+                <h1 class="hero-title">Meseros Profesionales para tu Evento</h1>
+                <p class="hero-subtitle">Servicio de primera clase para bodas, fiestas y eventos corporativos en Cocoyoc y todo Morelos</p>
+                <div class="d-flex justify-content-center flex-wrap">
+                    <a href="#contacto" class="btn btn-primary-custom me-3 mb-3">Solicitar Presupuesto</a>
+                    <a href="https://wa.me/527352759938?text=Hola%20Rodolfo,%20estoy%20interesado%20en%20el%20servicio%20de%20meseros" class="btn btn-secondary-custom mb-3" target="_blank">WhatsApp Directo</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servicios Section -->
+    <section id="servicios" class="py-5 bg-white">
+        <div class="container">
+            <h2 class="text-center section-title" data-aos="fade-up">Nuestros Servicios</h2>
+            <p class="text-center mb-5" data-aos="fade-up" data-aos-delay="100">Ofrecemos soluciones completas para todo tipo de eventos</p>
+            
+            <div class="row">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-card">
+                        <img src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Servicio para bodas" class="service-img">
+                        <div class="service-body">
+                            <h3 class="service-title">Bodas</h3>
+                            <p>Meseros con experiencia en bodas que garantizan un servicio discreto, elegante y eficiente para tu día especial.</p>
+                            <div class="price-badge">Desde $200/persona</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-card">
+                        <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Eventos corporativos" class="service-img">
+                        <div class="service-body">
+                            <h3 class="service-title">Eventos Corporativos</h3>
+                            <p>Profesionales capacitados para eventos empresariales, asegurando protocolo y atención impecable.</p>
+                            <div class="price-badge">Desde $180/persona</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="service-card">
+                        <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" alt="Fiestas privadas" class="service-img">
+                        <div class="service-body">
+                            <h3 class="service-title">Fiestas Privadas</h3>
+                            <p>Desde reuniones íntimas hasta grandes celebraciones, adaptamos nuestro servicio a tus necesidades.</p>
+                            <div class="price-badge">Desde $150/persona</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="nosotros" class="py-5 bg-light">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade-right">
+                    <img src="https://images.unsplash.com/photo-1555244162-803834f70033?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Nuestro equipo" class="img-fluid rounded shadow">
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <h2 class="section-title">Sobre Nosotros</h2>
+                    <p>Con más de 15 años de experiencia en el sector de eventos, nuestro equipo de meseros profesionales ha servido en las ocasiones más especiales en Cocoyoc y todo el estado de Morelos.</p>
+                    
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-medal"></i>
+                        </div>
+                        <div class="benefit-content">
+                            <h4>Experiencia Garantizada</h4>
+                            <p>Nuestros meseros cuentan con amplia trayectoria en los mejores eventos de la región.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <div class="benefit-content">
+                            <h4>Profesionalismo</h4>
+                            <p>Uniforme impecable, protocolo perfecto y atención discreta pero eficiente.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-hand-holding-usd"></i>
+                        </div>
+                        <div class="benefit-content">
+                            <h4>Flexibilidad en Presupuestos</h4>
+                            <p>Ofrecemos opciones para todos los bolsillos sin comprometer la calidad del servicio.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="galeria" class="py-5 bg-white">
+        <div class="container">
+            <h2 class="text-center section-title" data-aos="fade-up">Nuestros Eventos</h2>
+            <p class="text-center mb-5" data-aos="fade-up" data-aos-delay="100">Algunos momentos especiales donde hemos participado</p>
+            
+            <div class="row">
+                <div class="col-md-4" data-aos="zoom-in">
+                    <div class="gallery-img">
+                        <img src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Evento 1">
+                    </div>
+                </div>
+                
+                <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="gallery-img">
+                        <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" alt="Evento 2">
+                    </div>
+                </div>
+                
+                <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="gallery-img">
+                        <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Evento 3">
+                    </div>
+                </div>
+                
+                <div class="col-md-4" data-aos="zoom-in">
+                    <div class="gallery-img">
+                        <img src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Evento 4">
+                    </div>
+                </div>
+                
+                <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="gallery-img">
+                        <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Evento 5">
+                    </div>
+                </div>
+                
+                <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="gallery-img">
+                        <img src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Evento 6">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonios" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center section-title" data-aos="fade-up">Lo que dicen nuestros clientes</h2>
+            <p class="text-center mb-5" data-aos="fade-up" data-aos-delay="100">La satisfacción de nuestros clientes es nuestra mejor carta de presentación</p>
+            
+            <div class="row">
+                <div class="col-md-4" data-aos="fade-up">
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">"Contraté a Rodolfo y su equipo para mi boda en Cocoyoc y fue la mejor decisión. Los meseros fueron profesionales, atentos y discretos. Muchos invitados me preguntaron por el servicio."</p>
+                        <p class="testimonial-author">- Ana G., Novia</p>
+                        <div class="text-warning">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">"Para nuestro evento corporativo anual necesitábamos un servicio impecable y lo conseguimos con este equipo. Puntuales, bien uniformados y con excelente actitud."</p>
+                        <p class="testimonial-author">- Carlos M., Director de Marketing</p>
+                        <div class="text-warning">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">"He contratado varios servicios de meseros y este es sin duda el mejor. Precios justos, flexibilidad y sobre todo, un servicio de primera. Los recomiendo ampliamente."</p>
+                        <p class="testimonial-author">- Laura S., Organizadora de Eventos</p>
+                        <div class="text-warning">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div data-aos="fade-up">
+                <h2 class="cta-title">¿Listo para elevar tu evento?</h2>
+                <p class="cta-text">Un servicio de mesería profesional puede marcar la diferencia entre un evento bueno y uno excepcional. Permítenos encargarnos de los detalles para que tú solo disfrutes.</p>
+                <a href="#contacto" class="btn btn-primary-custom me-3">Solicitar Presupuesto</a>
+                <a href="https://wa.me/527352759938?text=Hola%20Rodolfo,%20estoy%20interesado%20en%20el%20servicio%20de%20meseros" class="btn btn-secondary-custom" target="_blank">WhatsApp Directo</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contacto" class="py-5 bg-white">
+        <div class="container">
+            <h2 class="text-center section-title" data-aos="fade-up">Contáctanos</h2>
+            <p class="text-center mb-5" data-aos="fade-up" data-aos-delay="100">Responde este breve formulario y nos pondremos en contacto contigo a la brevedad</p>
+            
+            <div class="row">
+                <div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade-right">
+                    <form id="contactForm" action="https://formsubmit.co/your@email.com" method="POST">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_next" value="https://yourwebsite.com/thanks.html">
+                        
+                        <div class="form-group">
+                            <input type="text" class="form-control form-control-custom" id="name" name="name" placeholder=" " required>
+                            <label for="name" class="floating-label">Nombre Completo</label>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="email" class="form-control form-control-custom" id="email" name="email" placeholder=" " required>
+                            <label for="email" class="floating-label">Correo Electrónico</label>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="tel" class="form-control form-control-custom" id="phone" name="phone" placeholder=" ">
+                            <label for="phone" class="floating-label">Teléfono (opcional)</label>
+                        </div>
+                        
+                        <div class="form-group">
+                            <select class="form-control form-control-custom" id="eventType" name="eventType" required>
+                                <option value="" disabled selected></option>
+                                <option value="boda">Boda</option>
+                                <option value="corporativo">Evento Corporativo</option>
+                                <option value="fiesta">Fiesta Privada</option>
+                                <option value="otro">Otro</option>
+                            </select>
+                            <label for="eventType" class="floating-label">Tipo de Evento</label>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="date" class="form-control form-control-custom" id="eventDate" name="eventDate" placeholder=" " required>
+                            <label for="eventDate" class="floating-label">Fecha del Evento</label>
+                        </div>
+                        
+                        <div class="form-group">
+                            <textarea class="form-control form-control-custom" id="message" name="message" rows="4" placeholder=" " required></textarea>
+                            <label for="message" class="floating-label">Cuéntanos sobre tu evento</label>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary-custom w-100">Enviar Consulta</button>
+                    </form>
+                </div>
+                
+                <div class="col-lg-6" data-aos="fade-left">
+                    <!-- Tarjeta Combinada de Contacto -->
+                    <div style="background: white; border-radius: 15px; padding: 40px; box-shadow: 0 12px 35px rgba(139, 90, 43, 0.12);">
+                        <!-- Sección Teléfono/WhatsApp -->
+                        <div style="display: flex; align-items: flex-start; margin-bottom: 30px; padding-bottom: 30px; border-bottom: 1px solid rgba(139, 90, 43, 0.1);">
+                            <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #D4AF37 0%, #8B5A2B 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 25px; flex-shrink: 0;">
+                                <i class="fas fa-phone-alt" style="color: white; font-size: 2rem;"></i>
+                            </div>
+                            <div>
+                                <h3 style="color: #8B5A2B; font-family: 'Playfair Display', serif; font-weight: 700; margin-bottom: 12px; font-size: 1.5rem;">Contacto Directo</h3>
+                                <p style="margin-bottom: 8px; font-size: 1.15rem; color: #555;">
+                                    <i class="fas fa-phone" style="color: #D4AF37; margin-right: 10px;"></i>
+                                    <a href="tel:+527352759938" style="color: #8B5A2B; text-decoration: none; font-weight: 500; transition: all 0.3s ease;">+52 735 275 9938</a>
+                                </p>
+                                <p style="margin-bottom: 15px; font-size: 1.15rem; color: #555;">
+                                    <i class="fab fa-whatsapp" style="color: #25D366; margin-right: 10px;"></i>
+                                    <a href="https://wa.me/527352759938?text=Hola%20Rodolfo,%20estoy%20interesado%20en%20el%20servicio%20de%20meseros" 
+                                       style="color: #8B5A2B; text-decoration: none; font-weight: 500; transition: all 0.3s ease;">WhatsApp: Rodolfo Larazo</a>
+                                </p>
+                                <a href="https://wa.me/527352759938?text=Hola%20Rodolfo,%20estoy%20interesado%20en%20el%20servicio%20de%20meseros" 
+                                   style="display: inline-block; background: linear-gradient(135deg, #D4AF37 0%, #8B5A2B 100%); color: white; border: none; padding: 12px 30px; font-size: 1.05rem; font-weight: 500; border-radius: 50px; transition: all 0.3s ease; box-shadow: 0 5px 20px rgba(212, 175, 55, 0.3); text-decoration: none;">
+                                    <i class="fab fa-whatsapp" style="margin-right: 8px;"></i> Contactar Ahora
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <!-- Sección Ubicación/Horario -->
+                        <div style="display: flex; flex-wrap: wrap;">
+                            <!-- Columna Ubicación -->
+                            <div style="flex: 1; min-width: 250px; padding-right: 20px;">
+                                <div style="display: flex; align-items: center; margin-bottom: 25px;">
+                                    <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #D4AF37 0%, #8B5A2B 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; flex-shrink: 0;">
+                                        <i class="fas fa-map-marker-alt" style="color: white; font-size: 1.3rem;"></i>
+                                    </div>
+                                    <div>
+                                        <h4 style="color: #8B5A2B; font-family: 'Playfair Display', serif; font-weight: 700; margin-bottom: 5px; font-size: 1.2rem;">Zona de Servicio</h4>
+                                        <p style="margin: 0; font-size: 1rem; color: #555; line-height: 1.5;">
+                                            Cocoyoc, Morelos y zonas aledañas<br>
+                                            <span style="font-weight: 500; color: #8B5A2B;">Disponibles en todo el estado</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Columna Horario -->
+                            <div style="flex: 1; min-width: 250px;">
+                                <div style="display: flex; align-items: center;">
+                                    <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #D4AF37 0%, #8B5A2B 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; flex-shrink: 0;">
+                                        <i class="fas fa-clock" style="color: white; font-size: 1.3rem;"></i>
+                                    </div>
+                                    <div>
+                                        <h4 style="color: #8B5A2B; font-family: 'Playfair Display', serif; font-weight: 700; margin-bottom: 5px; font-size: 1.2rem;">Horario</h4>
+                                        <p style="margin: 0; font-size: 1rem; color: #555; line-height: 1.5;">
+                                            <span style="display: inline-block; width: 100px;">Lun-Vie:</span> 9:00 am - 7:00 pm<br>
+                                            <span style="display: inline-block; width: 100px;">Sábados:</span> 10:00 am - 3:00 pm
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Nota adicional -->
+                        <p style="margin-top: 30px; padding-top: 20px; border-top: 1px solid rgba(139, 90, 43, 0.1); font-size: 0.95rem; color: #8B5A2B; font-style: italic; text-align: center;">
+                            <i class="fas fa-info-circle" style="margin-right: 8px;"></i> Para eventos fuera de Morelos, consultar disponibilidad con anticipación
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h3 class="text-white mb-4">Meseros Profesionales</h3>
+                    <p>Servicio de mesería de primera calidad para eventos en Cocoyoc y todo Morelos. Experiencia, profesionalismo y atención personalizada.</p>
+                    <div class="social-icons mt-4">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/527352759938"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-md-2 mb-4 mb-md-0">
+                    <h4 class="text-white mb-4">Enlaces</h4>
+                    <div class="footer-links">
+                        <a href="#servicios">Servicios</a>
+                        <a href="#nosotros">Nosotros</a>
+                        <a href="#galeria">Galería</a>
+                        <a href="#testimonios">Testimonios</a>
+                        <a href="#contacto">Contacto</a>
+                    </div>
+                </div>
+                
+                <div class="col-md-3 mb-4 mb-md-0">
+                    <h4 class="text-white mb-4">Servicios</h4>
+                    <div class="footer-links">
+                        <a href="#servicios">Bodas</a>
+                        <a href="#servicios">Eventos Corporativos</a>
+                        <a href="#servicios">Fiestas Privadas</a>
+                        <a href="#servicios">Catering</a>
+                        <a href="#contacto">Cotizaciones</a>
+                    </div>
+                </div>
+                
+                <div class="col-md-3">
+                    <h4 class="text-white mb-4">Contacto</h4>
+                    <div class="footer-links">
+                        <a href="tel:+527352759938"><i class="fas fa-phone-alt me-2"></i> +52 735 275 9938</a>
+                        <a href="mailto:contacto@meserosprofesionales.com"><i class="fas fa-envelope me-2"></i> contacto@meserosprofesionales.com</a>
+                        <a href="#"><i class="fas fa-map-marker-alt me-2"></i> Cocoyoc, Morelos</a>
+                    </div>
+                </div>
+            </div>
+            
+            <hr class="mt-5 mb-4" style="border-color: rgba(255,255,255,0.1);">
+            
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">&copy; 2023 Meseros Profesionales. Todos los derechos reservados.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p class="mb-0">Representante: Rodolfo Larazo</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/527352759938?text=Hola%20Rodolfo,%20estoy%20interesado%20en%20el%20servicio%20de%20meseros" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- AOS Animation -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- FormSubmit -->
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+        
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const eventType = document.getElementById('eventType').value;
+            const eventDate = document.getElementById('eventDate').value;
+            const message = document.getElementById('message').value;
+            
+            // Create WhatsApp message
+            const whatsappMessage = `Hola Rodolfo, estoy interesado en el servicio de meseros.%0A%0A*Nombre:* ${name}%0A*Teléfono:* ${phone || 'No proporcionado'}%0A*Tipo de Evento:* ${eventType}%0A*Fecha del Evento:* ${eventDate}%0A*Mensaje:* ${message}`;
+            
+            // Open WhatsApp
+            window.open(`https://wa.me/527352759938?text=${whatsappMessage}`, '_blank');
+            
+            // Reset form
+            this.reset();
+            
+            // Show success message (you can replace this with a modal or alert)
+            alert('¡Gracias por tu mensaje! Nos pondremos en contacto contigo pronto.');
+        });
+    </script>
+</body>
+</html>
