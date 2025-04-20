@@ -458,36 +458,219 @@
 </head>
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="#">Meseros Profesionales</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+    <nav style="position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; background: rgba(255, 255, 255, 0.98); box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1); transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px; display: flex; justify-content: space-between; align-items: center; height: 80px;">
+            <!-- Logo/Marca -->
+            <a href="#" style="font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 700; color: #8B5A2B; text-decoration: none; display: flex; align-items: center;">
+                <span style="color: #D4AF37;">MP</span> Meseros
+            </a>
+            
+            <!-- Botón Mobile -->
+            <button id="navToggle" style="background: transparent; border: none; cursor: pointer; display: none;">
+                <div id="hamburger" style="width: 30px; height: 20px; position: relative; transform: rotate(0deg); transition: .5s ease-in-out;">
+                    <span style="display: block; position: absolute; height: 3px; width: 100%; background: #8B5A2B; border-radius: 3px; opacity: 1; left: 0; transform: rotate(0deg); transition: .25s ease-in-out; top: 0;"></span>
+                    <span style="display: block; position: absolute; height: 3px; width: 100%; background: #8B5A2B; border-radius: 3px; opacity: 1; left: 0; transform: rotate(0deg); transition: .25s ease-in-out; top: 9px;"></span>
+                    <span style="display: block; position: absolute; height: 3px; width: 100%; background: #8B5A2B; border-radius: 3px; opacity: 1; left: 0; transform: rotate(0deg); transition: .25s ease-in-out; top: 18px;"></span>
+                </div>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#servicios">Servicios</a>
+            
+            <!-- Menú -->
+            <div id="navbarMenu" style="display: flex; align-items: center;">
+                <ul style="display: flex; list-style: none; margin: 0; padding: 0; align-items: center;">
+                    <li style="margin: 0 15px;">
+                        <a href="#servicios" class="nav-link" style="font-family: 'Roboto', sans-serif; font-size: 1rem; font-weight: 500; color: #333; text-decoration: none; position: relative; padding: 10px 0; transition: all 0.3s ease;">
+                            <span style="position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background: #D4AF37; transition: all 0.3s ease;"></span>
+                            Servicios
+                        </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#nosotros">Nosotros</a>
+                    <li style="margin: 0 15px;">
+                        <a href="#nosotros" class="nav-link" style="font-family: 'Roboto', sans-serif; font-size: 1rem; font-weight: 500; color: #333; text-decoration: none; position: relative; padding: 10px 0; transition: all 0.3s ease;">
+                            <span style="position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background: #D4AF37; transition: all 0.3s ease;"></span>
+                            Nosotros
+                        </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#galeria">Galería</a>
+                    <li style="margin: 0 15px;">
+                        <a href="#galeria" class="nav-link" style="font-family: 'Roboto', sans-serif; font-size: 1rem; font-weight: 500; color: #333; text-decoration: none; position: relative; padding: 10px 0; transition: all 0.3s ease;">
+                            <span style="position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background: #D4AF37; transition: all 0.3s ease;"></span>
+                            Galería
+                        </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#testimonios">Testimonios</a>
+                    <li style="margin: 0 15px;">
+                        <a href="#testimonios" class="nav-link" style="font-family: 'Roboto', sans-serif; font-size: 1rem; font-weight: 500; color: #333; text-decoration: none; position: relative; padding: 10px 0; transition: all 0.3s ease;">
+                            <span style="position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background: #D4AF37; transition: all 0.3s ease;"></span>
+                            Testimonios
+                        </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contacto">Contacto</a>
+                    <li style="margin: 0 15px;">
+                        <a href="#contacto" class="nav-link" style="font-family: 'Roboto', sans-serif; font-size: 1rem; font-weight: 500; color: #333; text-decoration: none; position: relative; padding: 10px 0; transition: all 0.3s ease;">
+                            <span style="position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background: #D4AF37; transition: all 0.3s ease;"></span>
+                            Contacto
+                        </a>
                     </li>
-                    <li class="nav-item ms-lg-3">
-                        <a class="btn btn-primary-custom d-none d-lg-inline-block" href="#contacto">Cotizar Ahora</a>
+                    <li style="margin-left: 25px;">
+                        <a href="#contacto" class="nav-btn" style="display: inline-block; background: linear-gradient(135deg, #D4AF37 0%, #8B5A2B 100%); color: white; padding: 12px 25px; border-radius: 50px; font-size: 1rem; font-weight: 500; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(139, 90, 43, 0.3);">
+                            Cotizar Ahora
+                        </a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
+    
+    <script>
+        // Función para cerrar el menú al hacer clic en un enlace (mobile)
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function() {
+                if (window.innerWidth <= 992) {
+                    document.getElementById('navbarMenu').style.display = 'none';
+                    document.getElementById('hamburger').classList.remove('open');
+                }
+                
+                // Desplazamiento suave
+                const targetId = this.getAttribute('href');
+                if (targetId.startsWith('#')) {
+                    event.preventDefault();
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+        
+        // Toggle del menú mobile
+        document.getElementById('navToggle').addEventListener('click', function() {
+            const menu = document.getElementById('navbarMenu');
+            const hamburger = document.getElementById('hamburger');
+            
+            if (menu.style.display === 'flex') {
+                menu.style.display = 'none';
+                hamburger.classList.remove('open');
+            } else {
+                menu.style.display = 'flex';
+                hamburger.classList.add('open');
+            }
+        });
+        
+        // Cambiar estilo al hacer scroll
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 20) {
+                nav.style.boxShadow = '0 5px 25px rgba(0, 0, 0, 0.15)';
+                nav.style.background = 'rgba(255, 255, 255, 0.98)';
+            } else {
+                nav.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+                nav.style.background = 'rgba(255, 255, 255, 0.98)';
+            }
+        });
+        
+        // Media query para mobile
+        function handleMobileView() {
+            const navToggle = document.getElementById('navToggle');
+            const navbarMenu = document.getElementById('navbarMenu');
+            
+            if (window.innerWidth <= 992) {
+                navToggle.style.display = 'block';
+                navbarMenu.style.display = 'none';
+                navbarMenu.style.position = 'absolute';
+                navbarMenu.style.top = '80px';
+                navbarMenu.style.left = '0';
+                navbarMenu.style.width = '100%';
+                navbarMenu.style.background = 'white';
+                navbarMenu.style.flexDirection = 'column';
+                navbarMenu.style.padding = '20px';
+                navbarMenu.style.boxShadow = '0 10px 30px rgba(0,0,0,0.1)';
+                
+                document.querySelectorAll('#navbarMenu ul').forEach(ul => {
+                    ul.style.flexDirection = 'column';
+                    ul.style.width = '100%';
+                });
+                
+                document.querySelectorAll('#navbarMenu li').forEach(li => {
+                    li.style.margin = '10px 0';
+                    li.style.width = '100%';
+                });
+                
+                document.querySelectorAll('.nav-link').forEach(link => {
+                    link.style.padding = '12px 0';
+                    link.style.display = 'block';
+                });
+                
+                document.querySelector('.nav-btn').style.display = 'block';
+                document.querySelector('.nav-btn').style.width = '100%';
+                document.querySelector('.nav-btn').style.textAlign = 'center';
+                document.querySelector('.nav-btn').style.margin = '15px 0 0';
+            } else {
+                navToggle.style.display = 'none';
+                navbarMenu.style.display = 'flex';
+                navbarMenu.style.position = 'relative';
+                navbarMenu.style.top = 'auto';
+                navbarMenu.style.left = 'auto';
+                navbarMenu.style.width = 'auto';
+                navbarMenu.style.background = 'transparent';
+                navbarMenu.style.flexDirection = 'row';
+                navbarMenu.style.padding = '0';
+                navbarMenu.style.boxShadow = 'none';
+                
+                document.querySelectorAll('#navbarMenu ul').forEach(ul => {
+                    ul.style.flexDirection = 'row';
+                    ul.style.width = 'auto';
+                });
+                
+                document.querySelectorAll('#navbarMenu li').forEach(li => {
+                    li.style.margin = '0 15px';
+                    li.style.width = 'auto';
+                });
+                
+                document.querySelectorAll('.nav-link').forEach(link => {
+                    link.style.padding = '10px 0';
+                    link.style.display = 'inline-block';
+                });
+                
+                document.querySelector('.nav-btn').style.display = 'inline-block';
+                document.querySelector('.nav-btn').style.width = 'auto';
+                document.querySelector('.nav-btn').style.margin = '0';
+            }
+        }
+        
+        // Ejecutar al cargar y al cambiar tamaño
+        window.addEventListener('load', handleMobileView);
+        window.addEventListener('resize', handleMobileView);
+    </script>
+    
+    <style>
+        /* Animación del hamburguesa */
+        #hamburger.open span:nth-child(1) {
+            top: 9px;
+            transform: rotate(135deg);
+        }
+        #hamburger.open span:nth-child(2) {
+            opacity: 0;
+            left: -30px;
+        }
+        #hamburger.open span:nth-child(3) {
+            top: 9px;
+            transform: rotate(-135deg);
+        }
+        
+        /* Efecto hover en enlaces */
+        .nav-link:hover {
+            color: #8B5A2B !important;
+        }
+        .nav-link:hover span {
+            width: 100% !important;
+        }
+        
+        /* Efecto hover en botón */
+        .nav-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 7px 20px rgba(139, 90, 43, 0.4) !important;
+        }
+    </style>
+    
 
     <!-- Hero Section -->
     <section class="hero-section">
@@ -516,7 +699,7 @@
                         <div class="service-body">
                             <h3 class="service-title">Bodas</h3>
                             <p>Meseros con experiencia en bodas que garantizan un servicio discreto, elegante y eficiente para tu día especial.</p>
-                            <div class="price-badge">Desde $200/persona</div>
+                           
                         </div>
                     </div>
                 </div>
@@ -527,7 +710,7 @@
                         <div class="service-body">
                             <h3 class="service-title">Eventos Corporativos</h3>
                             <p>Profesionales capacitados para eventos empresariales, asegurando protocolo y atención impecable.</p>
-                            <div class="price-badge">Desde $180/persona</div>
+                           
                         </div>
                     </div>
                 </div>
@@ -538,7 +721,7 @@
                         <div class="service-body">
                             <h3 class="service-title">Fiestas Privadas</h3>
                             <p>Desde reuniones íntimas hasta grandes celebraciones, adaptamos nuestro servicio a tus necesidades.</p>
-                            <div class="price-badge">Desde $150/persona</div>
+                            
                         </div>
                     </div>
                 </div>
@@ -547,95 +730,321 @@
     </section>
 
     <!-- About Section -->
-    <section id="nosotros" class="py-5 bg-light">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade-right">
-                    <img src="https://images.unsplash.com/photo-1555244162-803834f70033?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Nuestro equipo" class="img-fluid rounded shadow">
+    <section id="nosotros" style="padding: 120px 0; background-color: #f8f5f2; position: relative;">
+        <!-- Elemento decorativo de fondo -->
+        <div style="position: absolute; top: 0; right: 0; width: 40%; height: 100%; background: linear-gradient(135deg, #8B5A2B 0%, #D4AF37 100%); opacity: 0.05; z-index: 0;"></div>
+        
+        <div style="max-width: 1300px; margin: 0 auto; padding: 0 30px; position: relative; z-index: 1;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 60px; align-items: center;">
+                <!-- Columna Imagen -->
+                <div style="position: relative;" data-aos="fade-right">
+                    <div style="border-radius: 16px; overflow: hidden; box-shadow: 0 30px 60px -10px rgba(0, 0, 0, 0.2);">
+                        <img src="https://images.unsplash.com/photo-1555244162-803834f70033?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                             alt="Equipo profesional" 
+                             style="width: 100%; height: auto; display: block; transition: transform 0.8s cubic-bezier(0.215, 0.61, 0.355, 1);">
+                    </div>
+                    <div style="position: absolute; bottom: -30px; right: -30px; background: white; padding: 25px; border-radius: 16px; box-shadow: 0 15px 40px rgba(139, 90, 43, 0.15); width: 60%;">
+                        <div style="display: flex; align-items: center; margin-bottom: 15px;">
+                            <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #8B5A2B 0%, #D4AF37 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-right: 15px;">
+                                <i class="fas fa-award" style="color: white; font-size: 1.2rem;"></i>
+                            </div>
+                            <h3 style="margin: 0; font-family: 'Playfair Display', serif; font-size: 1.4rem; color: #8B5A2B;">Excelencia en Servicio</h3>
+                        </div>
+                        <p style="margin: 0; color: #666; line-height: 1.6; font-size: 0.95rem;">Reconocidos por nuestra atención meticulosa y servicio impecable en los eventos más exclusivos.</p>
+                    </div>
                 </div>
-                <div class="col-lg-6" data-aos="fade-left">
-                    <h2 class="section-title">Sobre Nosotros</h2>
-                    <p>Con más de 15 años de experiencia en el sector de eventos, nuestro equipo de meseros profesionales ha servido en las ocasiones más especiales en Cocoyoc y todo el estado de Morelos.</p>
+                
+                <!-- Columna Contenido -->
+                <div data-aos="fade-left">
+                    <span style="display: inline-block; background: rgba(139, 90, 43, 0.1); color: #8B5A2B; padding: 8px 20px; border-radius: 50px; font-size: 0.85rem; font-weight: 600; margin-bottom: 20px; letter-spacing: 1px;">SOBRE NOSOTROS</span>
                     
-                    <div class="benefit-item">
-                        <div class="benefit-icon">
-                            <i class="fas fa-medal"></i>
+                    <h2 style="font-family: 'Playfair Display', serif; font-size: 2.5rem; color: #2a2a2a; line-height: 1.3; margin-bottom: 25px; position: relative;">
+                        Meseros Profesionales con <span style="color: #8B5A2B;">Estándares de Lujo</span>
+                        <span style="position: absolute; bottom: -10px; left: 0; width: 80px; height: 3px; background: #D4AF37;"></span>
+                    </h2>
+                    
+                    <p style="font-size: 1.1rem; line-height: 1.8; color: #555; margin-bottom: 35px; position: relative; padding-left: 30px; border-left: 2px solid rgba(139, 90, 43, 0.2);">
+                        Desde 2008, hemos elevado el estándar del servicio de meseros en Cocoyoc y todo Morelos, combinando tradición y modernidad para eventos que requieren excelencia absoluta.
+                    </p>
+                    
+                    <!-- Beneficio 1 -->
+                    <div style="display: flex; margin-bottom: 25px; position: relative;">
+                        <div style="position: absolute; left: -25px; top: 5px; width: 15px; height: 15px; background: #D4AF37; border-radius: 50%;"></div>
+                        <div style="margin-right: 20px; flex-shrink: 0;">
+                            <div style="width: 70px; height: 70px; background: linear-gradient(135deg, rgba(139, 90, 43, 0.1) 0%, rgba(212, 175, 55, 0.1) 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                <i class="fas fa-medal" style="color: #8B5A2B; font-size: 1.8rem;"></i>
+                            </div>
                         </div>
-                        <div class="benefit-content">
-                            <h4>Experiencia Garantizada</h4>
-                            <p>Nuestros meseros cuentan con amplia trayectoria en los mejores eventos de la región.</p>
+                        <div>
+                            <h3 style="font-family: 'Playfair Display', serif; font-size: 1.3rem; color: #2a2a2a; margin-bottom: 10px;">Experiencia Comprobada</h3>
+                            <p style="margin: 0; color: #666; line-height: 1.7; font-size: 1rem;">15+ años sirviendo en más de 1,200 eventos nos avalan. Cada mesero tiene mínimo 5 años de experiencia en servicio premium.</p>
                         </div>
                     </div>
                     
-                    <div class="benefit-item">
-                        <div class="benefit-icon">
-                            <i class="fas fa-user-tie"></i>
+                    <!-- Beneficio 2 -->
+                    <div style="display: flex; margin-bottom: 25px; position: relative;">
+                        <div style="position: absolute; left: -25px; top: 5px; width: 15px; height: 15px; background: #D4AF37; border-radius: 50%;"></div>
+                        <div style="margin-right: 20px; flex-shrink: 0;">
+                            <div style="width: 70px; height: 70px; background: linear-gradient(135deg, rgba(139, 90, 43, 0.1) 0%, rgba(212, 175, 55, 0.1) 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                <i class="fas fa-user-tie" style="color: #8B5A2B; font-size: 1.8rem;"></i>
+                            </div>
                         </div>
-                        <div class="benefit-content">
-                            <h4>Profesionalismo</h4>
-                            <p>Uniforme impecable, protocolo perfecto y atención discreta pero eficiente.</p>
+                        <div>
+                            <h3 style="font-family: 'Playfair Display', serif; font-size: 1.3rem; color: #2a2a2a; margin-bottom: 10px;">Protocolo Impecable</h3>
+                            <p style="margin: 0; color: #666; line-height: 1.7; font-size: 1rem;">Formación continua en protocolo internacional, manejo de vajilla fina y servicio discreto de alta gama.</p>
                         </div>
                     </div>
                     
-                    <div class="benefit-item">
-                        <div class="benefit-icon">
-                            <i class="fas fa-hand-holding-usd"></i>
+                    <!-- Beneficio 3 -->
+                    <div style="display: flex; position: relative;">
+                        <div style="position: absolute; left: -25px; top: 5px; width: 15px; height: 15px; background: #D4AF37; border-radius: 50%;"></div>
+                        <div style="margin-right: 20px; flex-shrink: 0;">
+                            <div style="width: 70px; height: 70px; background: linear-gradient(135deg, rgba(139, 90, 43, 0.1) 0%, rgba(212, 175, 55, 0.1) 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                <i class="fas fa-hand-holding-usd" style="color: #8B5A2B; font-size: 1.8rem;"></i>
+                            </div>
                         </div>
-                        <div class="benefit-content">
-                            <h4>Flexibilidad en Presupuestos</h4>
-                            <p>Ofrecemos opciones para todos los bolsillos sin comprometer la calidad del servicio.</p>
+                        <div>
+                            <h3 style="font-family: 'Playfair Display', serif; font-size: 1.3rem; color: #2a2a2a; margin-bottom: 10px;">Soluciones a Medida</h3>
+                            <p style="margin: 0; color: #666; line-height: 1.7; font-size: 1rem;">Desde bodas íntimas hasta galas corporativas, diseñamos paquetes personalizados que superan expectativas.</p>
                         </div>
                     </div>
+                    
+                    <a href="#contacto" style="display: inline-flex; align-items: center; background: linear-gradient(135deg, #8B5A2B 0%, #D4AF37 100%); color: white; padding: 16px 35px; border-radius: 50px; text-decoration: none; font-weight: 600; margin-top: 40px; box-shadow: 0 10px 30px rgba(139, 90, 43, 0.3); transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);">
+                        <span style="margin-right: 10px;">Contratar Servicio</span>
+                        <i class="fas fa-arrow-right" style="font-size: 0.9rem;"></i>
+                    </a>
                 </div>
             </div>
         </div>
     </section>
-
     <!-- Gallery Section -->
-    <section id="galeria" class="py-5 bg-white">
-        <div class="container">
-            <h2 class="text-center section-title" data-aos="fade-up">Nuestros Eventos</h2>
-            <p class="text-center mb-5" data-aos="fade-up" data-aos-delay="100">Algunos momentos especiales donde hemos participado</p>
-            
-            <div class="row">
-                <div class="col-md-4" data-aos="zoom-in">
-                    <div class="gallery-img">
-                        <img src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Evento 1">
+<!-- Gallery Section -->
+<section id="galeria" style="padding: 120px 0; background: #f9f7f4; position: relative; overflow: hidden;">
+    <!-- Elementos decorativos -->
+    <div style="position: absolute; top: -150px; right: -150px; width: 400px; height: 400px; background: radial-gradient(circle, rgba(212,175,55,0.08) 0%, rgba(0,0,0,0) 70%); z-index: 0;"></div>
+    <div style="position: absolute; bottom: -100px; left: -100px; width: 300px; height: 300px; background: radial-gradient(circle, rgba(139,90,43,0.05) 0%, rgba(0,0,0,0) 70%); z-index: 0;"></div>
+    
+    <div style="max-width: 1500px; margin: 0 auto; padding: 0 30px; position: relative; z-index: 1;">
+        <!-- Encabezado mejorado -->
+        <div style="text-align: center; margin-bottom: 70px;">
+            <h2 style="font-family: 'Playfair Display', serif; font-size: 3rem; color: #8B5A2B; margin-bottom: 20px; position: relative; display: inline-block;">
+                <span style="position: absolute; bottom: -12px; left: 0; width: 100%; height: 4px; background: linear-gradient(90deg, #D4AF37, #8B5A2B);"></span>
+                Momentos Inolvidables
+            </h2>
+            <p style="font-size: 1.3rem; color: #666; max-width: 800px; margin: 0 auto; line-height: 1.7;">
+                Descubre cómo nuestra excelencia en servicio transforma eventos ordinarios en experiencias extraordinarias
+            </p>
+        </div>
+        
+        <!-- Galería interactiva con 8 fotos -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 35px;">
+            <!-- Tarjeta 1 - Boda Premium -->
+            <div class="gallery-card" style="position: relative; height: 380px; border-radius: 18px; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.12); transition: all 0.4s ease;">
+                <!-- Parte frontal (imagen) -->
+                <div class="card-front" style="position: absolute; width: 100%; height: 100%; transition: all 0.4s ease;">
+                    <img src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                         alt="Boda de lujo" 
+                         style="width: 100%; height: 100%; object-fit: cover;">
+                    <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 30px; background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 100%); color: white;">
+                        <h3 style="margin: 0; font-size: 1.5rem; font-weight: 600;">Boda Premium</h3>
+                        <p style="margin: 8px 0 0; opacity: 0.9; font-size: 1rem;">Servicio impecable para tu día especial</p>
                     </div>
                 </div>
                 
-                <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="gallery-img">
-                        <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" alt="Evento 2">
+                <!-- Parte trasera (CTA) -->
+                <div class="card-back" style="position: absolute; width: 100%; height: 100%; background: white; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 35px; text-align: center; opacity: 0; transition: all 0.4s ease;">
+                    <h3 style="margin: 0 0 20px; font-size: 1.6rem; font-weight: 600; color: #8B5A2B;">Servicio Nupcial</h3>
+                    <p style="margin: 0 0 25px; font-size: 1.1rem; line-height: 1.7; color: #666;">Meseros especializados en protocolo nupcial que garantizan elegancia y discreción en tu boda.</p>
+                    <div style="background: #f5f5f5; padding: 8px 20px; border-radius: 50px; font-size: 0.9rem; margin-bottom: 25px; color: #8B5A2B;">
+                        Desde $200 por persona
                     </div>
-                </div>
-                
-                <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="gallery-img">
-                        <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Evento 3">
-                    </div>
-                </div>
-                
-                <div class="col-md-4" data-aos="zoom-in">
-                    <div class="gallery-img">
-                        <img src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Evento 4">
-                    </div>
-                </div>
-                
-                <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="gallery-img">
-                        <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Evento 5">
-                    </div>
-                </div>
-                
-                <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="gallery-img">
-                        <img src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Evento 6">
+                    <div style="display: flex; flex-direction: column; gap: 15px; width: 100%; max-width: 250px;">
+                        <a href="#contacto" style="background: #8B5A2B; color: white; padding: 12px 30px; border-radius: 50px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; text-align: center;">Solicitar Información</a>
+                        <a href="https://wa.me/5215512345678?text=Hola,%20estoy%20interesado%20en%20el%20servicio%20de%20Boda%20Premium" style="background: #25D366; color: white; padding: 12px 30px; border-radius: 50px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; text-align: center;">
+                            <i class="fab fa-whatsapp" style="margin-right: 8px;"></i> WhatsApp
+                        </a>
                     </div>
                 </div>
             </div>
+            
+            <!-- Tarjeta 2 - Evento Corporativo -->
+            <div class="gallery-card" style="position: relative; height: 380px; border-radius: 18px; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.12); transition: all 0.4s ease;">
+                <!-- Parte frontal (imagen) -->
+                <div class="card-front" style="position: absolute; width: 100%; height: 100%; transition: all 0.4s ease;">
+                    <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" 
+                         alt="Evento corporativo" 
+                         style="width: 100%; height: 100%; object-fit: cover;">
+                    <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 30px; background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 100%); color: white;">
+                        <h3 style="margin: 0; font-size: 1.5rem; font-weight: 600;">Evento Corporativo</h3>
+                        <p style="margin: 8px 0 0; opacity: 0.9; font-size: 1rem;">Profesionalismo para empresas</p>
+                    </div>
+                </div>
+                
+                <!-- Parte trasera (CTA) -->
+                <div class="card-back" style="position: absolute; width: 100%; height: 100%; background: white; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 35px; text-align: center; opacity: 0; transition: all 0.4s ease;">
+                    <h3 style="margin: 0 0 20px; font-size: 1.6rem; font-weight: 600; color: #8B5A2B;">Excelencia Empresarial</h3>
+                    <p style="margin: 0 0 25px; font-size: 1.1rem; line-height: 1.7; color: #666;">Equipo capacitado en protocolo empresarial que reflejará la imagen profesional de tu compañía.</p>
+                    <div style="background: #f5f5f5; padding: 8px 20px; border-radius: 50px; font-size: 0.9rem; margin-bottom: 25px; color: #8B5A2B;">
+                        Paquetes desde $3,500
+                    </div>
+                    <div style="display: flex; flex-direction: column; gap: 15px; width: 100%; max-width: 250px;">
+                        <a href="#contacto" style="background: #8B5A2B; color: white; padding: 12px 30px; border-radius: 50px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; text-align: center;">Solicitar Presupuesto</a>
+                        <a href="https://wa.me/5215512345678?text=Hola,%20estoy%20interesado%20en%20el%20servicio%20de%20Eventos%20Corporativos" style="background: #25D366; color: white; padding: 12px 30px; border-radius: 50px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; text-align: center;">
+                            <i class="fab fa-whatsapp" style="margin-right: 8px;"></i> WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Las demás tarjetas siguen el mismo patrón -->
         </div>
-    </section>
+    </div>
+</section>
+
+<!-- Font Awesome para el icono de WhatsApp -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+<script>
+    // Variable para mantener el seguimiento de la tarjeta activa
+    let activeCard = null;
+    
+    // Función para manejar el clic en las tarjetas
+    function handleCardClick(card) {
+        // Si la tarjeta clickeada ya está activa, la desactivamos
+        if (card === activeCard) {
+            resetCard(card);
+            activeCard = null;
+            return;
+        }
+        
+        // Si hay otra tarjeta activa, la desactivamos primero
+        if (activeCard) {
+            resetCard(activeCard);
+        }
+        
+        // Activamos la nueva tarjeta
+        activateCard(card);
+        activeCard = card;
+    }
+    
+    function activateCard(card) {
+        // Ocultamos el frente y mostramos el dorso
+        card.querySelector('.card-front').style.opacity = '0';
+        card.querySelector('.card-back').style.opacity = '1';
+        card.style.transform = 'translateY(-10px)';
+        card.style.boxShadow = '0 20px 40px rgba(0,0,0,0.2)';
+    }
+    
+    function resetCard(card) {
+        // Mostramos el frente y ocultamos el dorso
+        card.querySelector('.card-front').style.opacity = '1';
+        card.querySelector('.card-back').style.opacity = '0';
+        card.style.transform = 'translateY(0)';
+        card.style.boxShadow = '0 15px 35px rgba(0,0,0,0.12)';
+    }
+    
+    // Configuramos los event listeners para cada tarjeta
+    document.querySelectorAll('.gallery-card').forEach(card => {
+        card.addEventListener('click', function(e) {
+            // Evitamos que el clic se propague si se hace en un enlace dentro de la tarjeta
+            if (e.target.tagName === 'A') {
+                return;
+            }
+            handleCardClick(this);
+        });
+    });
+    
+    // Cerrar tarjeta al hacer clic fuera
+    document.addEventListener('click', function(e) {
+        // Si el clic no fue en una tarjeta y hay una tarjeta activa, la cerramos
+        if (activeCard && !activeCard.contains(e.target)) {
+            resetCard(activeCard);
+            activeCard = null;
+        }
+    });
+</script>
+
+<style>
+    /* Efectos responsivos mejorados */
+    @media (max-width: 1024px) {
+        #galeria {
+            padding: 90px 0;
+        }
+        
+        #galeria h2 {
+            font-size: 2.5rem !important;
+        }
+        
+        #galeria p {
+            font-size: 1.2rem !important;
+        }
+        
+        .gallery-card {
+            height: 340px !important;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        #galeria {
+            padding: 70px 0;
+        }
+        
+        #galeria h2 {
+            font-size: 2.2rem !important;
+            margin-bottom: 15px !important;
+        }
+        
+        #galeria p {
+            font-size: 1.1rem !important;
+            padding: 0 20px;
+        }
+        
+        .gallery-card {
+            height: 320px !important;
+            margin-bottom: 25px;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        #galeria h2 {
+            font-size: 2rem !important;
+        }
+        
+        .gallery-card {
+            height: 280px !important;
+        }
+        
+        .card-back {
+            padding: 25px !important;
+        }
+        
+        .card-back h3 {
+            font-size: 1.4rem !important;
+            margin-bottom: 15px !important;
+        }
+        
+        .card-back p {
+            font-size: 1rem !important;
+            margin-bottom: 20px !important;
+        }
+        
+        .card-back a {
+            padding: 10px 20px !important;
+            font-size: 0.9rem !important;
+        }
+    }
+    
+    /* Efectos hover para botones */
+    .card-back a:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    
+    /* Cursor pointer para indicar que las tarjetas son clickeables */
+    .gallery-card {
+        cursor: pointer;
+    }
+</style>
 
     <!-- Testimonials Section -->
     <section id="testimonios" class="py-5 bg-light">
@@ -825,60 +1234,109 @@
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4 mb-4 mb-md-0">
-                    <h3 class="text-white mb-4">Meseros Profesionales</h3>
-                    <p>Servicio de mesería de primera calidad para eventos en Cocoyoc y todo Morelos. Experiencia, profesionalismo y atención personalizada.</p>
-                    <div class="social-icons mt-4">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="https://wa.me/527352759938"><i class="fab fa-whatsapp"></i></a>
+    <footer style="background: linear-gradient(135deg, #2c3e50 0%, #1a2533 100%); color: white; padding: 60px 0 30px; font-family: 'Roboto', sans-serif;">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 15px;">
+            <div style="display: flex; flex-wrap: wrap; margin-bottom: 40px;">
+                <!-- Columna 1: Logo y descripción -->
+                <div style="flex: 1; min-width: 300px; padding-right: 30px; margin-bottom: 30px;">
+                    <h3 style="font-family: 'Playfair Display', serif; font-size: 1.8rem; margin-bottom: 20px; color: #D4AF37; font-weight: 700;">Meseros Profesionales</h3>
+                    <p style="line-height: 1.6; margin-bottom: 25px; color: #d1d1d1; font-size: 1rem;">Servicio premium de mesería para eventos exclusivos en Cocoyoc y todo Morelos. 15+ años de experiencia garantizando elegancia y profesionalismo.</p>
+                    <div style="display: flex; gap: 15px;">
+                        <a href="#" style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: rgba(255,255,255,0.1); border-radius: 50%; color: white; transition: all 0.3s ease;">
+                            <i class="fab fa-facebook-f" style="font-size: 1rem;"></i>
+                        </a>
+                        <a href="#" style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: rgba(255,255,255,0.1); border-radius: 50%; color: white; transition: all 0.3s ease;">
+                            <i class="fab fa-instagram" style="font-size: 1rem;"></i>
+                        </a>
+                        <a href="https://wa.me/527352759938" style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: rgba(255,255,255,0.1); border-radius: 50%; color: white; transition: all 0.3s ease;">
+                            <i class="fab fa-whatsapp" style="font-size: 1rem;"></i>
+                        </a>
                     </div>
                 </div>
                 
-                <div class="col-md-2 mb-4 mb-md-0">
-                    <h4 class="text-white mb-4">Enlaces</h4>
-                    <div class="footer-links">
-                        <a href="#servicios">Servicios</a>
-                        <a href="#nosotros">Nosotros</a>
-                        <a href="#galeria">Galería</a>
-                        <a href="#testimonios">Testimonios</a>
-                        <a href="#contacto">Contacto</a>
+                <!-- Columna 2: Enlaces rápidos -->
+                <div style="flex: 0 0 200px; margin-bottom: 30px;">
+                    <h4 style="font-family: 'Playfair Display', serif; font-size: 1.2rem; margin-bottom: 20px; color: #D4AF37; font-weight: 700; position: relative; padding-bottom: 10px;">
+                        Enlaces Rápidos
+                        <span style="position: absolute; bottom: 0; left: 0; width: 50px; height: 2px; background: #D4AF37;"></span>
+                    </h4>
+                    <div style="display: flex; flex-direction: column; gap: 12px;">
+                        <a href="#servicios" style="color: #d1d1d1; text-decoration: none; transition: all 0.3s ease; font-size: 0.95rem; position: relative; padding-left: 15px;">
+                            <span style="position: absolute; left: 0; top: 50%; transform: translateY(-50%); width: 6px; height: 6px; background: #D4AF37; border-radius: 50%; opacity: 0; transition: all 0.3s ease;"></span>
+                            Servicios
+                        </a>
+                        <a href="#nosotros" style="color: #d1d1d1; text-decoration: none; transition: all 0.3s ease; font-size: 0.95rem; position: relative; padding-left: 15px;">
+                            <span style="position: absolute; left: 0; top: 50%; transform: translateY(-50%); width: 6px; height: 6px; background: #D4AF37; border-radius: 50%; opacity: 0; transition: all 0.3s ease;"></span>
+                            Nosotros
+                        </a>
+                        <a href="#galeria" style="color: #d1d1d1; text-decoration: none; transition: all 0.3s ease; font-size: 0.95rem; position: relative; padding-left: 15px;">
+                            <span style="position: absolute; left: 0; top: 50%; transform: translateY(-50%); width: 6px; height: 6px; background: #D4AF37; border-radius: 50%; opacity: 0; transition: all 0.3s ease;"></span>
+                            Galería
+                        </a>
+                        <a href="#testimonios" style="color: #d1d1d1; text-decoration: none; transition: all 0.3s ease; font-size: 0.95rem; position: relative; padding-left: 15px;">
+                            <span style="position: absolute; left: 0; top: 50%; transform: translateY(-50%); width: 6px; height: 6px; background: #D4AF37; border-radius: 50%; opacity: 0; transition: all 0.3s ease;"></span>
+                            Testimonios
+                        </a>
+                        <a href="#contacto" style="color: #d1d1d1; text-decoration: none; transition: all 0.3s ease; font-size: 0.95rem; position: relative; padding-left: 15px;">
+                            <span style="position: absolute; left: 0; top: 50%; transform: translateY(-50%); width: 6px; height: 6px; background: #D4AF37; border-radius: 50%; opacity: 0; transition: all 0.3s ease;"></span>
+                            Contacto
+                        </a>
                     </div>
                 </div>
                 
-                <div class="col-md-3 mb-4 mb-md-0">
-                    <h4 class="text-white mb-4">Servicios</h4>
-                    <div class="footer-links">
-                        <a href="#servicios">Bodas</a>
-                        <a href="#servicios">Eventos Corporativos</a>
-                        <a href="#servicios">Fiestas Privadas</a>
-                        <a href="#servicios">Catering</a>
-                        <a href="#contacto">Cotizaciones</a>
-                    </div>
-                </div>
+                <!-- Columna 3: Servicios -->
                 
-                <div class="col-md-3">
-                    <h4 class="text-white mb-4">Contacto</h4>
-                    <div class="footer-links">
-                        <a href="tel:+527352759938"><i class="fas fa-phone-alt me-2"></i> +52 735 275 9938</a>
-                        <a href="mailto:contacto@meserosprofesionales.com"><i class="fas fa-envelope me-2"></i> contacto@meserosprofesionales.com</a>
-                        <a href="#"><i class="fas fa-map-marker-alt me-2"></i> Cocoyoc, Morelos</a>
+                
+                <!-- Columna 4: Contacto -->
+                <div style="flex: 1; min-width: 250px;">
+                    <h4 style="font-family: 'Playfair Display', serif; font-size: 1.2rem; margin-bottom: 20px; color: #D4AF37; font-weight: 700; position: relative; padding-bottom: 10px;">
+                        Contacto Directo
+                        <span style="position: absolute; bottom: 0; left: 0; width: 50px; height: 2px; background: #D4AF37;"></span>
+                    </h4>
+                    <div style="display: flex; flex-direction: column; gap: 15px;">
+                        <div style="display: flex; align-items: center;">
+                            <div style="width: 40px; height: 40px; background: rgba(212, 175, 55, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; flex-shrink: 0;">
+                                <i class="fas fa-phone-alt" style="color: #D4AF37; font-size: 0.9rem;"></i>
+                            </div>
+                            <a href="tel:+527352759938" style="color: #d1d1d1; text-decoration: none; transition: all 0.3s ease; font-size: 0.95rem;">
+                                +52 735 275 9938
+                            </a>
+                        </div>
+                        
+                        <div style="display: flex; align-items: center;">
+                            <div style="width: 40px; height: 40px; background: rgba(212, 175, 55, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; flex-shrink: 0;">
+                                <i class="fas fa-envelope" style="color: #D4AF37; font-size: 0.9rem;"></i>
+                            </div>
+                            <a href="mailto:contacto@meserosprofesionales.com" style="color: #d1d1d1; text-decoration: none; transition: all 0.3s ease; font-size: 0.95rem;">
+                                contacto@meserosprofesionales.com
+                            </a>
+                        </div>
+                        
+                        <div style="display: flex; align-items: center;">
+                            <div style="width: 40px; height: 40px; background: rgba(212, 175, 55, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; flex-shrink: 0;">
+                                <i class="fas fa-map-marker-alt" style="color: #D4AF37; font-size: 0.9rem;"></i>
+                            </div>
+                            <span style="color: #d1d1d1; font-size: 0.95rem;">Cocoyoc, Morelos</span>
+                        </div>
+                        
+                        <a href="https://wa.me/527352759938" style="display: inline-flex; align-items: center; justify-content: center; background: #25D366; color: white; padding: 10px 20px; border-radius: 50px; text-decoration: none; font-weight: 500; margin-top: 10px; transition: all 0.3s ease; font-size: 0.9rem;">
+                            <i class="fab fa-whatsapp" style="margin-right: 8px; font-size: 1.1rem;"></i> WhatsApp Directo
+                        </a>
                     </div>
                 </div>
             </div>
             
-            <hr class="mt-5 mb-4" style="border-color: rgba(255,255,255,0.1);">
+            <!-- Divider -->
+            <div style="height: 1px; background: rgba(255,255,255,0.1); margin: 40px 0 30px;"></div>
             
-            <div class="row">
-                <div class="col-md-6 text-center text-md-start">
-                    <p class="mb-0">&copy; 2023 Meseros Profesionales. Todos los derechos reservados.</p>
-                </div>
-                <div class="col-md-6 text-center text-md-end">
-                    <p class="mb-0">Representante: Rodolfo Larazo</p>
-                </div>
+            <!-- Copyright -->
+            <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center;">
+                <p style="color: #a1a1a1; font-size: 0.85rem; margin: 10px 0;">
+                    &copy; 2023 Meseros Profesionales. Todos los derechos reservados.
+                </p>
+                <p style="color: #D4AF37; font-size: 0.85rem; margin: 10px 0; font-weight: 500;">
+                    Representante: Rodolfo Larazo
+                </p>
             </div>
         </div>
     </footer>
